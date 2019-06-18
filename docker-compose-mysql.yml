@@ -1,0 +1,25 @@
+version: "3.5"
+services:
+  mysql:
+    #build: ./mysql/.
+    image: "vickyrv2206/mysql:3.0"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    volumes:
+      - backup:/var/lib/mysql
+    networks:
+      - test_net
+networks:
+  test_net:
+    name: test_net
+    driver: overlay
+
+  #default:
+    #external:
+     # name: sample_net
+
+volumes:
+  backup:
+  
