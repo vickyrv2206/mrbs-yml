@@ -2,7 +2,7 @@ version: "3.5"
 services: 
   apache:
     #build: ./apache/.
-    image: "vickyrv2206/apache:3.0"
+    image: "vickyrv2206/apache:4.0"
     deploy:
       replicas: 1
       restart_policy:
